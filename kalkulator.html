@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kalkulator Sederhana</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="app">
+    Hasil : {{ hasil }} <br>
+    <input v-model="angka1" type="number">
+    <input v-model="angka2" type="number"> <br>
+    <button v-on:click="hasil=angka1+angka2">+</button>
+    <button v-on:click="hasil=angka1-angka2">-</button>
+    <button v-on:click="hasil=angka1*angka2">*</button>
+    <button v-on:click="hasil=angka1/angka2">/</button>
+  </div>
+
+  <script>
+    const app = Vue.createApp({
+      data(){
+        return {
+          angka1: 0,
+          angka2: 0,
+          hasil: 0,
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+</body>
+</html>
